@@ -1,16 +1,14 @@
 import './App.css';
 import React, { useState } from 'react';
 import './bootstrap.css'
+import makeItems from './components/makeItems.js'
+import Item from './components/Item.jsx';
 
 function App() {
   const [selectedItem, setSelectedItem] = useState(null);
   const [showForm, setShowForm] = useState(false);
   const [newItem, setNewItem] = useState({ name: '', price: '', imageUrl: '' });
-  const [items, setItems] = useState([
-    { id: 1, name: 'Lamp', price: '10', imageUrl: 'http://www.comparestoreprices.co.uk/images/te/tesco-ceramic-tapered-lamp.jpg' },
-    { id: 2, name: 'Table', price: '20', imageUrl: 'http://www.comparestoreprices.co.uk/images/at/atom-pedestal-side-table-clear.jpg' },
-    { id: 3, name: 'Lava Lamp', price: '30', imageUrl: 'https://i.pinimg.com/736x/40/98/19/40981946f13b8bd41b5705ea9b56c7d0--lava-lamps-dorm.jpg' },
-  ]);
+  const [items, setItems] = useState(makeItems());
 
   const handleItemClick = (item) => {
     setSelectedItem(item);
@@ -38,8 +36,8 @@ function App() {
           <ul>
             {items.map((item) => (
               <li key={item.id} onClick={() => handleItemClick(item)}>
-                {item.name} - ${item.price}
-              </li>
+              {item.name} - ${item.price}
+            </li>
             ))}
           </ul>
         </div>
