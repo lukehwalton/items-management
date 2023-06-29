@@ -1,6 +1,7 @@
 .framed{
   border: 1px yellowgreen solid;
   margin: 5px;
+  padding: 5px;
 }
 
 .heading{
@@ -11,6 +12,7 @@
 
 .wide-button{
   width: 100%;
+  margin: 5px;
 }
 
 .details{
@@ -19,4 +21,12 @@
 
 h2{
   text-align: left;
+}
+
+.items, .details-col{
+  height: 100%;
+}
+
+input{
+  width: 20ch
 }
